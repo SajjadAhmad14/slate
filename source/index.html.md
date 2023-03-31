@@ -1,12 +1,6 @@
 ---
 title: API Reference
 
-language_tabs: # must be one of https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers
-  - shell
-  - ruby
-  - python
-  - javascript
-
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
@@ -20,178 +14,273 @@ code_clipboard: true
 
 meta:
   - name: description
-    content: Documentation for the Kittn API
+    content: Documentation for the Clarity, for Charities API
 ---
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+> API endpoint:
+> <a href='https://giveclarity.co/'>https://giveclarity.co</a>
+
+Welcome to the Carity, for Charities API! You can use our API endpoints to gain access to our database and.
 
 We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
-
 # Authentication
 
-> To authorize, use this code:
+> To authorize your requests, please follow the steps:
 
-```ruby
-require 'kittn'
+> Register with us as an organization.
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
+> Get your team's API key.
 
-```python
-import kittn
+> Send your API key in the header with every endpoint request.
 
-api = kittn.authorize('meowmeowmeow')
-```
+Please use API key assigned to your team to access all the API endpoints. You can register for new API key by [Getting Started](https://giveclarity.co/users/sign_up) as an organization Or if you are already our partner, please Contact Us at `corey@giveclarity.co` to get started with our API.
 
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here" \
-  -H "Authorization: meowmeowmeow"
-```
+Our API endoints expect for the API key to be included in all API requests to the server in a header that looks like the following:
 
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
+`Authorization: yourownkey`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>yourownkey</code> with your personal API key.
 </aside>
 
-# Kittens
+# Endponits
 
-## Get All Kittens
+## Get All the donors for in your team
 
-```ruby
-require 'kittn'
+```
+GET http://example.com/api/v1/donors
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
 ```
 
-```python
-import kittn
+> Server will render all the donors in json format:
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
+```json
+[
+  {
+    "id": 2,
+    "email": "test@test.com",
+    "first_name": "first",
+    "last_name": "donor",
+    "birthday": null,
+    "bio": null,
+    "username": "first1",
+    "avatar": "",
+    "attachable_sgid": ""
+  }
+]
 ```
 
-```shell
-curl "http://example.com/api/kittens" \
-  -H "Authorization: meowmeowmeow"
+This endpoint retrieves all the donors.
+
+### HTTP Request
+
+`GET http://example.com/api/v1/donors`
+
+### Query Parameters
+
+No query parameter is required to pass with request.
+
+<aside class="success">
+Success — a code 200 is rendered with the data!
+</aside>
+
+## Create a donor as a team member in your Team
+
+```
+POST http://example.com/api/v1/donors
+
 ```
 
-```javascript
-const kittn = require('kittn');
+> Server will create a donor and render it in json format:
 
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
+```json
+{
+  "id": 2,
+  "email": "test@test.com",
+  "first_name": "first",
+  "last_name": "donor",
+  "birthday": null,
+  "bio": null,
+  "username": "first1",
+  "avatar": "",
+  "attachable_sgid": ""
+}
 ```
 
-> The above command returns JSON structured like this:
+This endpoint will create a donor in your team.
+
+### HTTP Request
+
+`POST http://example.com/donor`
+
+### Query Parameters
+
+| Parameter  | Description      | Data type |
+| ---------- | ---------------- | --------- |
+| first_name | Donor first name | String    |
+| last_name  | Donor last name  | String    |
+| email      | Donor email      | String    |
+| username   | Donor username   | String    |
+
+<aside class="success">A code 200 with the data is rendered</aside>
+
+## Get All the beneficiaries for in your team
+
+```
+GET http://example.com/api/v1/beneficiaries
+
+```
+
+> Server will render all the beneficiaries in json format:
+
+```json
+[
+  {
+    "id": 3,
+    "email": "test@test.com",
+    "first_name": "first",
+    "last_name": "beneficiary",
+    "birthday": null,
+    "bio": null,
+    "username": "first1",
+    "avatar": "",
+    "attachable_sgid": ""
+  }
+]
+```
+
+This endpoint retrieves all the beneficiaries.
+
+### HTTP Request
+
+`GET http://example.com/api/v1/beneficiaries`
+
+### Query Parameters
+
+No query parameter is required to pass with request.
+
+<aside class="success">
+Success — a code 200 is rendered with the data!
+</aside>
+
+## Create a beneficiary as a team member in your Team
+
+```
+POST http://example.com/api/v1/beneficiaries
+
+```
+
+> Server will create a beneficiary and render it in json format:
+
+```json
+{
+  "id": 3,
+  "email": "test@test.com",
+  "first_name": "first",
+  "last_name": "beneficiary",
+  "user_type": "beneficiary",
+  "birthday": null,
+  "bio": null,
+  "username": "first1",
+  "avatar": "",
+  "attachable_sgid": ""
+}
+```
+
+This endpoint will create a beneficiary in your team.
+
+### HTTP Request
+
+`POST http://example.com/beneficiaries`
+
+### Query Parameters
+
+| Parameter  | Description            | Data type |
+| ---------- | ---------------------- | --------- |
+| first_name | Beneficiary first name | String    |
+| last_name  | Beneficiary last name  | String    |
+| email      | Beneficiary email      | String    |
+| username   | Beneficiary username   | String    |
+
+<aside class="success">A code 200 with the data is rendered</aside>
+
+## Get All the posts of a team manager
+
+```
+GET http://example.com/api/v1/posts
+
+```
+
+> Server will render all the posts of a team manager in json format:
 
 ```json
 [
   {
     "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
+    "title": "test",
+    "user_id": 1,
+    "content": "test post",
+    "audience": null,
+    "ordered_file_ids": [],
+    "files": []
   }
 ]
 ```
 
-This endpoint retrieves all kittens.
+This endpoint retrieves all the posts by a team manager.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET http://example.com/api/v1/posts`
 
 ### Query Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+No query parameter is required to pass with request.
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+Success — a code 200 is rendered with the data!
 </aside>
 
-## Get a Specific Kitten
+## Create a post as a team manager in your Team
 
-```ruby
-require 'kittn'
+```
+POST http://example.com/api/v1/posts
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
 ```
 
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
+> Server will create a post and render it in json format:
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "id": 1,
+  "title": "test",
+  "user_id": 1,
+  "content": "test post",
+  "audience": null,
+  "ordered_file_ids": [],
+  "files": []
 }
 ```
 
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+This endpoint will create a post by team manager in your team.
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`POST http://example.com/api/v1/posts`
 
-### URL Parameters
+### Query Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+| Parameter  | Description            | Data type |
+| ---------- | ---------------------- | --------- |
+| first_name | Beneficiary first name | String    |
+| last_name  | Beneficiary last name  | String    |
+| email      | Beneficiary email      | String    |
+| username   | Beneficiary username   | String    |
+
+<aside class="success">A code 200 with the data is rendered</aside>
 
 ## Delete a Specific Kitten
 
@@ -216,9 +305,9 @@ curl "http://example.com/api/kittens/2" \
 ```
 
 ```javascript
-const kittn = require('kittn');
+const kittn = require("kittn");
 
-let api = kittn.authorize('meowmeowmeow');
+let api = kittn.authorize("meowmeowmeow");
 let max = api.kittens.delete(2);
 ```
 
@@ -227,7 +316,7 @@ let max = api.kittens.delete(2);
 ```json
 {
   "id": 2,
-  "deleted" : ":("
+  "deleted": ":("
 }
 ```
 
@@ -239,7 +328,6 @@ This endpoint deletes a specific kitten.
 
 ### URL Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
-
+| Parameter | Description                    |
+| --------- | ------------------------------ |
+| ID        | The ID of the kitten to delete |
