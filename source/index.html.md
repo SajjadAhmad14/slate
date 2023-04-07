@@ -1,5 +1,5 @@
 ---
-title: API Reference
+title: API Reference for the Clarity, for Charities.
 
 toc_footers:
   - <a href='https://giveclarity.co/' target = 'blank'>Sign Up for a Developer Key</a>
@@ -13,7 +13,7 @@ code_clipboard: true
 
 meta:
   - name: description
-    content: Documentation for the Clarity, for Charities API
+    content: API Documentation for the Clarity, for Charities API
 ---
 
 # Introduction
@@ -29,11 +29,14 @@ You can view code examples in the dark area to the right, and explore specific e
 
 > To authorize your requests, please follow the steps:
 
-> Register with us as an organization.
+```
+Register with us as an organization.
 
-> Get your team's API key.
+Get your team's API key.
 
-> Send your API key in the header with every endpoint request.
+Send your API key in the header with every endpoint request.
+
+```
 
 Please use API key assigned to your team to access all the API endpoints. You can register for a new API key by [Getting Started](https://giveclarity.co/users/sign_up) as an organization. If you are already our partner, please Contact Us at `corey@giveclarity.co` to get started with the API.
 

@@ -77,6 +77,8 @@ body {
     display: block;
     max-width: 100%;
     margin-bottom: $logo-margin;
+    height: 150px;
+    margin: 0 auto;
     margin-top: 20px;
   }
 
@@ -575,7 +577,7 @@ body {
     }
 
     a {
-      color: #87ceeb;
+      color: #333;
       text-decoration: none;
     }
   }
@@ -585,13 +587,19 @@ body {
     padding-top: 2em;
     padding-bottom: 2em;
     padding: 2em $main-padding;
+    margin-top: -22px;
+    color: #333;
+    font-weight: bold;
+    font-size: 14px;
   }
 
   blockquote {
     & > p {
       background-color: $code-annotation-bg;
       padding: $code-annotation-padding 2em;
-      color: #eee;
+      color: #333;
+      font-weight: bolder;
+      margin-top: -70px;
     }
   }
 }
@@ -622,6 +630,18 @@ body {
   .toc-link {
     padding-top: 0.3em;
     padding-bottom: 0.3em;
+  }
+
+  .content {
+    pre {
+      margin-top: 0;
+    }
+
+    blockquote {
+      & > p {
+        margin-top: 0;
+      }
+    }
   }
 }
 
