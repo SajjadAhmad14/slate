@@ -577,7 +577,7 @@ body {
     }
 
     a {
-      color: #333;
+      color: #8fbcd4;
       text-decoration: none;
     }
   }
@@ -588,7 +588,7 @@ body {
     padding-bottom: 2em;
     padding: 2em $main-padding;
     margin-top: -22px;
-    color: #333;
+    color: #fff;
     font-weight: bold;
     font-size: 14px;
   }
@@ -597,8 +597,7 @@ body {
     & > p {
       background-color: $code-annotation-bg;
       padding: $code-annotation-padding 2em;
-      color: #333;
-      font-weight: bolder;
+      color: #fff;
       margin-top: -70px;
     }
   }
@@ -643,6 +642,17 @@ body {
       }
     }
   }
+  .content {
+    pre {
+      margin-top: -22px;
+    }
+
+    blockquote {
+      & > p {
+        margin-top: -70px;
+      }
+    }
+  }
 }
 
 @media (max-width: $phone-width) {
@@ -673,6 +683,18 @@ body {
 
   .highlight + p {
     margin-top: 20px;
+  }
+
+  .content {
+    pre {
+      margin-top: 0;
+    }
+
+    blockquote {
+      & > p {
+        margin-top: 0;
+      }
+    }
   }
 }
 

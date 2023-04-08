@@ -34,11 +34,11 @@ Register with us as an organization.
 
 Get your team's API key.
 
-Send your API key in the header with every endpoint request.
+Send API key in the header with every request.
 
 ```
 
-Please use API key assigned to your team to access all the API endpoints. You can register for a new API key by [Getting Started](https://giveclarity.co/users/sign_up) as an organization. If you are already our partner, please Contact Us at `corey@giveclarity.co` to get started with the API.
+Please use API key assigned to your team to access all the API endpoints. You can register for a new API key by [Getting Started](https://giveclarity.co/users/sign_up) as an organization. If you are already our partner, please Contact Us at `hello@giveclarity.co` to get started with the API.
 
 Our API endoints expect for the API key to be included in all API requests to the server in a header that looks like the following:
 
