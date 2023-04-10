@@ -21,9 +21,9 @@ meta:
 > API endpoint:
 > <a href='https://giveclarity.co/'>https://giveclarity.co</a>
 
-Welcome to the Clarity, for Charities API Reference! You can use our API endpoints to integrate with our platform.
+Welcome to Clarity’s API reference! You can use these API endpoints to integrate with our platform.
 
-You can view code examples in the dark area to the right, and explore specific endpoints by selecting them from the left-side navigation menu.
+View code examples in the dark area to the right, and explore specific endpoints by selecting them from the left-side navigation menu.
 
 # Authentication
 
@@ -38,19 +38,19 @@ Send API key in the header with every request.
 
 ```
 
-Please use API key assigned to your team to access all the API endpoints. You can register for a new API key by [Getting Started](https://giveclarity.co/users/sign_up) as an organization. If you are already our partner, please Contact Us at `hello@giveclarity.co` to get started with the API.
+Please use the API key assigned to your team to access all of our API endpoints. You can register for a new API key by [Getting Started](https://giveclarity.co/users/sign_up) as an organization through the landing page at [www.giveclarity.co](https://giveclarity.co). If you are already our partner, please contact us at `hello@giveclarity.co` to get authorized with a private key and to get started with utilizing our API.
 
-Our API endoints expect for the API key to be included in all API requests to the server in a header that looks like the following:
+Our API endpoints expects your team's API private key to be included in all API requests to the server. It must be included in a header using the following syntax:
 
 `Authorization: yourownkey`
 
 <aside class="notice">
-You must replace <code>yourownkey</code> with your personal API key.
+You must replace <code>yourownkey</code> with your personal API private key.
 </aside>
 
 # Endpoints
 
-## Get All the donors
+## Get all the donors
 
 > Server will render all the donors in json format:
 
@@ -90,7 +90,7 @@ This endpoint retrieves all the donors associated with the team.
 
 ### Request Body
 
-No request body is required to pass with request.
+No request body is required for a successful API response.
 
 <aside class="success">
 Success — a code 200 is rendered with the data!
@@ -147,9 +147,9 @@ for example: <code>custom_fields: [{"team_custom_field_id": 1, "value": "test"}]
 <code>beneficiary_ids</code> are used to create sponsorships. It should be an array of ids of beneficairies. for example: <code> beneficiary_ids: [1, 2]</code>
 </aside>
 
-<aside class="success">A code 200 with the data is rendered</aside>
+<aside class="success">Success — a code 200 is rendered with the data!</aside>
 
-## Get All the beneficiaries
+## Get all the beneficiaries
 
 > Server will render all the beneficiaries in json format:
 
@@ -242,9 +242,9 @@ Please pass a FormData object in request body.
 for example: <code>custom_fields: [{"team_custom_field_id": 1, "value": "test"}]</code>
 </aside>
 
-<aside class="success">A code 200 with the data is rendered</aside>
+<aside class="success">Success — a code 200 is rendered with the data!</aside>
 
-## Get All the posts of a team manager
+## Get all the posts of a team manager
 
 > Server will render all the posts of a team manager in json format:
 
@@ -287,7 +287,7 @@ No request body is required to pass with request.
 Success — a code 200 is rendered with the data!
 </aside>
 
-## Create a post as a team manager, for a donor or beneficiary.
+## Create a post as a team manager, as the manager, for donors, or for beneficiaries
 
 > Server will create a post and render it in json format:
 
@@ -335,9 +335,9 @@ for example: <code>audience: [{"id": "donors"}, {"id": "beneficiaries"}, {"id": 
 <code>user_id</code> is an id of the user who is creating post. User can be a manager, a donor or a beneficiary.
 </aside>
 
-<aside class="success">A code 200 with the data is rendered</aside>
+<aside class="success">Success — a code 200 is rendered with the data!</aside>
 
-## Email invite to a user.
+## Email invite to a user
 
 > Server will trigger an email invite to a user:
 
@@ -368,9 +368,9 @@ Please pass a JSON object in request body.
 for example: <code>{"user_id": 1, "message": "let's join!"}</code>
 </aside>
 
-<aside class="success">A code 200 with the data is rendered</aside>
+<aside class="success">Success — a code 200 is rendered with the data!</aside>
 
-## Create a Custom field.
+## Create a custom field
 
 > Server will render all custom fields of a team in JSON format:
 
@@ -414,9 +414,9 @@ for example: <code>{"name": "first donor field", "value_type": "text", "record_t
 "editable": true, "visible": true}</code>
 </aside>
 
-<aside class="success">A code 200 with the data is rendered</aside>
+<aside class="success">Success — a code 200 is rendered with the data!</aside>
 
-## Delete a Custom field.
+## Delete a custom field
 
 > Server will trigger an email invite to a user:
 
@@ -444,4 +444,4 @@ Please pass a JSON object in request body.
 for example: <code>{"id": 10, "record_type": "donor"}</code>
 </aside>
 
-<aside class="success">A code 200 with the data is rendered</aside>
+<aside class="success">Success — a code 200 is rendered with the data!</aside>
