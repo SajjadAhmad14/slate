@@ -9,9 +9,9 @@ The Clarity API uses the following error codes:
 | Error Code | Meaning                                                                |
 | ---------- | ---------------------------------------------------------------------- | --- |
 | 400        | Bad Request -- Your request is invalid.                                |
-| 400        | Donor error messages                                                   |     |
-| 400        | Beneficiary error messages                                             |     |
-| 400        | Post error messages                                                    |     |
+| 400        | Donor error messages.                                                  |     |
+| 400        | Beneficiary error messages.                                            |     |
+| 400        | Post error messages.                                                   |     |
 | 401        | Unauthorized -- Your API key is wrong.                                 |
 | 404        | Not Found -- Custom field not found.                                   |
 | 422        | Method Not Allowed -- Default field can not be deleted.                |
